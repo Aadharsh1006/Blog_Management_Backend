@@ -34,6 +34,10 @@ public class BlogPost {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
+    @NotBlank
+    @Size(max = 20)
+    private String status = "PUBLISHED"; 
+
     // Getters, Setters
     public long getId() { return id; }
     public void setId(long id) { this.id = id; }
@@ -49,4 +53,11 @@ public class BlogPost {
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
     public LocalDateTime getUpdatedAt() { return updatedAt; }
     public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
 }
