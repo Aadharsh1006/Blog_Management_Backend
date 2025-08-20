@@ -1,14 +1,4 @@
-# Use lightweight OpenJDK 17 image
-FROM openjdk:21-jdk-alpine
-
-# Create a volume for temporary files
+FROM openjdk:17-jdk-alpine
 VOLUME /tmp
-
-# ARG to specify the jar file name (default to target/*.jar)
-ARG JAR_FILE=target/*.jar
-
-# Copy the jar file into the container as app.jar
-COPY ${JAR_FILE} app.jar
-
-# Run the jar file when container starts
-ENTRYPOINT ["java","-jar","/app.jar"]
+COPY target/springapp-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
