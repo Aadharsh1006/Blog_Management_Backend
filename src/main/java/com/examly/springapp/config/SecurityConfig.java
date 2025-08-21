@@ -53,6 +53,7 @@ public class SecurityConfig {
     @Profile("!test") // This configuration is for the live application
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+            .cors(cors-> {})
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(authz -> authz
                 .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
