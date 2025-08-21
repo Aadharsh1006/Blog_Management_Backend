@@ -1,0 +1,4 @@
+com\examly\springapp\DemoApplicationTests.class
+com\examly\springapp\model\BlogPostTest.class
+com\examly\springapp\repository\BlogPostRepositoryTest.class
+com\examly\springapp\controller\BlogPostControllerTest.class
